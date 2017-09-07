@@ -29,19 +29,17 @@
 <script>
 	$('#picker').distpicker();
 	$('#provice').on('change',function(){
-		$('#city').attr('size',6);
-		$(this).removeAttr('size');
-		alert(123);
+		$('#city').attr('multiple','multiple');
+		$(this).removeAttr('multiple');
 	});
 	$('#city').on('click',function(){
-		$(this).removeAttr('size');
+		$(this).removeAttr('multiple');
 	});
 	$('#city').on('change',function(){
-		$('#area').attr('size',6);
-		alert(123);
+		$('#area').attr('multiple','multiple');
 	});
 	$('#area').on('click',function(){
-		$(this).removeAttr('size');
+		$(this).removeAttr('multiple');
 	});
 
 </script>
