@@ -4,17 +4,43 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>picker</title>
+	<style>
+		select{
+			width: 150px;
+			appearance:none;
+			-moz-appearance:none;
+			-webkit-appearance:none;
+			float: left;
+		}
+		#picker{
+			margin-top: 200px;
+		}
+	</style>
 </head>
 <body>
 	<div data-toggle="distpicker" id="picker"><!-- container -->
-	   <select data-province="---- 选择省 ----"></select>
-		<select data-city="---- 选择市 ----"></select>
-		  <select data-district="---- 选择区 ----"></select>
+	   <select id="provice" data-province="选择省"></select>
+		<select id="city" data-city="选择市"></select>
+		  <select id="area" data-district="选择区"></select>
 	</div>
 </body>
 <script src="js/jquery.min.js"></script>
 <script src="js/distpicker.js"></script>
 <script>
 	$('#picker').distpicker();
+	$('#provice').on('change',function(){
+		$('#city').attr('size',6);
+		$(this).removeAttr('size');
+	});
+	$('#city').on('click',function(){
+		$(this).removeAttr('size');
+	});
+	$('#city').on('change',function(){
+		$('#area').attr('size',6);
+	});
+	$('#area').on('click',function(){
+		$(this).removeAttr('size');
+	});
+
 </script>
 </html>
